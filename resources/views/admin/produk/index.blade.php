@@ -19,18 +19,19 @@
             </div>
 
             <div class="section-body">
-                <h2 class="section-title"> Data Ongkir</h2>
+                <h2 class="section-title"> Data Produk</h2>
                 <div class="card">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card border-0 shadow-sm rounded">
                                 <div class="card-body">
-                                <a href="{{ route('shippings.create') }}" class="btn btn-md btn-success mb-3">Add</a>
+                                <a href="{{ route('produk.create') }}" class="btn btn-md btn-success mb-3">Add</a>
                                     <table class="table table-bordered">
                                         <thead>
                                         <tr>
-                                            <th scope="col">Nama Kota</th>
-                                            <th scope="col">Tarif</th>
+                                            <th scope="col">Nama </th>
+                                            <th scope="col">Harga</th>
+                                            <th scope="col">Stock</th>
                                             <th scope="col">AKSI</th>
                                         </tr>
                                         </thead>
@@ -42,8 +43,8 @@
                                                 <td>{{ $item->nama_kota }}</td>
                                                 <td>{!! $item->tarif !!}</td>
                                                 <td class="text-center">
-                                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('shippings.destroy', $item->id) }}" method="POST">
-                                                        <a href="{{ route('shippings.show', $item->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('produk.destroy', $item->id) }}" method="POST">
+                                                        <a href="{{ route('produk.show', $item->id) }}" class="btn btn-sm btn-primary">EDIT</a>
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>

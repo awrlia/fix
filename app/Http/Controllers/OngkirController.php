@@ -15,23 +15,43 @@ class OngkirController extends Controller
         return view('admin.shipping.index', compact('data', 'type_menu'));
     }
 
-
     public function create()
     {
-        return view('ongkir.create');
+        $type_menu = 'layout';
+        // Logic untuk menampilkan form tambah data
+        return view('admin.shipping.create', compact('type_menu'));
     }
 
-    public function store(Request $request)
-    {
-        // Validasi data input jika diperlukan
+    public function store(Request $request){
+        Ongkir::create([
+            'nama_kota' => $request->nama_kota,
+            'tarif' => $request->tarif,
+        ]);
 
-        $data = new Ongkir();
-        $data->nama_kota = $request->input('nama_kota');
-        $data->tarif = $request->input('tarif');
-        // Atur properti lainnya sesuai kebutuhan
-
-        $data->save();
-
-        return redirect()->route('ongkir.create')->with('success', 'Data berhasil ditambahkan');
+        return redirect()->route('shippings.index')->with(['success' => 'Data Berhasil Disimpan']);
     }
+
+    public function show(string $id){
+        $data = Ongkir::findorFail($id);
+        $type_menu = 'layout';
+
+        return view('admin.shipping.show', compact('type_menu', 'data'));
+    }
+
+    public function update(Request $request, $id){
+        $data = Ongkir::findorFail($id);
+        $data->update([
+            'nama_kota' => $request->nama_kota,
+            'tarif' => $request->tarif,
+        ]);
+
+        return redirect()->route('shippings.index')->with(['success' => 'Data Berhasil Update']);
+    }
+
+    public function destroy($id){
+        $data = Ongkir::findorFail($id);
+        $data->delete();
+        return redirect()->route('shippings.index')->with(['success' => 'Data Berhasil Dihapus']);
+    }
+
 }

@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\OngkirController;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +30,7 @@ Route::controller(LoginRegisterController::class)->group(function() {
 
 Route::prefix('admin')->group(function () {
     Route::resource('shippings', OngkirController::class);
-    Route::get('/ongkir/create', 'OngkirController@create')->name('ongkir.create');
-    Route::post('/ongkir/store', 'OngkirController@store')->name('ongkir.store');
-
-
+    Route::resource('produks', ProdukController::class);
 });
+
+
