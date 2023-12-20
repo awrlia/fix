@@ -1,21 +1,14 @@
-@extends('layouts.auth')
+@extends('auth.layouts')
 
-@section('title', 'Register')
+@section('content')
 
-@push('style')
-    <!-- CSS Libraries -->
-    <link rel="stylesheet"
-        href="{{ asset('library/selectric/public/selectric.css') }}">
-@endpush
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8">
 
-@section('main')
-    <div class="card card-primary">
-        <div class="card-header">
-            <h4>Register</h4>
-        </div>
-
-        <div class="card-body">
-        <form action="{{ route('store') }}" method="post">
+        <div class="card">
+            <div class="card-header">Register</div>
+            <div class="card-body">
+                <form action="{{ route('store') }}" method="post">
                     @csrf
                     <div class="mb-3 row">
                         <label for="name" class="col-md-4 col-form-label text-md-end text-start">Name</label>
@@ -55,15 +48,9 @@
                     </div>
                     
                 </form>
+            </div>
         </div>
-    </div>
+    </div>    
+</div>
+    
 @endsection
-
-@push('scripts')
-    <!-- JS Libraies -->
-    <script src="{{ asset('library/selectric/public/jquery.selectric.min.js') }}"></script>
-    <script src="{{ asset('library/jquery.pwstrength/jquery.pwstrength.min.js') }}"></script>
-
-    <!-- Page Specific JS File -->
-    <script src="{{ asset('js/page/auth-register.js') }}"></script>
-@endpush

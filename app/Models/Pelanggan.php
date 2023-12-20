@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Pelanggan extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'email',
+        'password',
+        'username',
+        'no_telepon',
+        'nama',
+    ];
 }
