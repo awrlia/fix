@@ -1,3 +1,4 @@
+<!-- resources/views/data-ongkir/create.blade.php -->
 @extends('layouts.app')
 
 @section('title', 'add')
@@ -17,11 +18,11 @@
                 <h2 class="section-title">Tambah Data Produk</h2>
                 <div class="card">
                     <div class="card-body">
-                        <form method="POST" action="{{ route('produks.store') }}">
+                        <form method="POST" action="{{ route('produk.store') }}">
                             @csrf
                             <div class="form-group">
                                 <label for="name">Nama Beras</label>
-                                <input type="text" name="nama" class="form-control" required>
+                                <input type="text" name="name" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="harga">Harga</label>
@@ -29,7 +30,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="stock">Stock</label>
-                                <input type="text" name="stock" class="form-control" required>
+                                <input type="number" min=0 name="stock" class="form-control" required>
                             </div>
                             <!-- Tambahkan field lainnya sesuai kebutuhan -->
 

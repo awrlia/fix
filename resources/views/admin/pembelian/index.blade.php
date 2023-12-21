@@ -25,7 +25,7 @@
                         <div class="col-md-12">
                             <div class="card border-0 shadow-sm rounded">
                                 <div class="card-body">
-                                <a href="{{ route('produks.create') }}" class="btn btn-md btn-success mb-3">Add</a>
+                                <a href="{{ route('produk.create') }}" class="btn btn-md btn-success mb-3">Add</a>
                                     <table class="table table-bordered">
                                         <thead>
                                         <tr>
@@ -40,12 +40,11 @@
                                             <tr>
                                                 
 
-                                                <td>{{ $item->nama }}</td>
-                                                <td>{!! $item->harga !!}</td>
-                                                <td>{{ $item->stock}}</td>
+                                                <td>{{ $item->nama_kota }}</td>
+                                                <td>{!! $item->tarif !!}</td>
                                                 <td class="text-center">
-                                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('produks.destroy', $item->id) }}" method="POST">
-                                                        <a href="{{ route('produks.show', $item->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('produk.destroy', $item->id) }}" method="POST">
+                                                        <a href="{{ route('produk.show', $item->id) }}" class="btn btn-sm btn-primary">EDIT</a>
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>

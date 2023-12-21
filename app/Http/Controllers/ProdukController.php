@@ -22,10 +22,11 @@ class ProdukController extends Controller
         return view('admin.produk.create', compact('type_menu'));
     }
 
-    public function store(Request $request){
-        Produk ::create([
-            'nama_kota' => $request->nama_kota,
-            'tarif' => $request->tarif,
+    public function store (Request $request){
+        Produk::create([
+            'nama' => $request->nama,
+            'harga' => $request->harga,
+            'stock' => $request->stock,
         ]);
 
         return redirect()->route('produks.index')->with(['success' => 'Data Berhasil Disimpan']);
@@ -41,8 +42,9 @@ class ProdukController extends Controller
     public function update(Request $request, $id){
         $data = Produk::findorFail($id);
         $data->update([
-            'nama_kota' => $request->nama_kota,
-            'tarif' => $request->tarif,
+            'nama' => $request->nama,
+            'harga' => $request->harga,
+            'stock' => $request->stock,
         ]);
 
         return redirect()->route('produks.index')->with(['success' => 'Data Berhasil Update']);

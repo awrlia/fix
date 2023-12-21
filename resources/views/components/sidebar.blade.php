@@ -17,9 +17,9 @@
                         <a class="nav-link"
                             href="{{ url('admin/shippings') }}">Ongkir</a>
                     </li>
-                    <li class="{{ Request::is('admin/shippings') ? 'active' : '' }}">
+                    <li class="{{ Request::is('admin/produks') ? 'active' : '' }}">
                         <a class="nav-link"
-                            href="{{ url('admin/shippings') }}">Produk</a>
+                            href="{{ url('admin/produks') }}">Produk</a>
                     </li>
                     <li class="{{ Request::is('admin/shippings') ? 'active' : '' }}">
                         <a class="nav-link"

@@ -15,23 +15,31 @@
                 </div>
             </div>
             <div class="section-body">
-                <h2 class="section-title">Edit Data Produk</h2>
+                <h2 class="section-title">Edit Data Pelanggan</h2>
                 <div class="card">
                     <div class="card-body">
-                        <form method="POST" action="{{ route('produks.update', $data->id) }}">
+                        <form method="POST" action="{{ route('pelanggans.update', $data->id) }}">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
-                                <label for="name">Nama Beras</label>
-                                <input type="text" name="nama" value="{{ $data->nama}}" class="form-control" required>
+                                <label for="name">Nama </label>
+                                <input type="text" name="nama" value="{{ $data->nama }}" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="harga">Harga</label>
-                                <input type="number" min=0 name="harga" class="form-control" value="{{ $data->harga }}" required>
+                                <label for="no_telepon">No Telepon</label>
+                                <input type="number" min=0 name="no_telepon" class="form-control" value="{{ $data->no_telepon }}" required>
                             </div>
                             <div class="form-group">
-                                <label for="stock">Stock</label>
-                                <input type="text" name="stock" value="{{ $data->stock}}" class="form-control" required>
+                                <label for="email">Email</label>
+                                <input type="text" min=0 name="email" class="form-control" value="{{ $data->email }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" min=0 name="username" class="form-control" value="{{ $data->username }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="text" min=0 name="password" class="form-control" value="{{ $data->password }}" required>
                             </div>
                             <!-- Tambahkan field lainnya sesuai kebutuhan -->
 

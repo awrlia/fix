@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"
         name="viewport">
-    <title>Subscribe &mdash; Stisla</title>
+    <title>Subscribe &mdash; Toko Beras</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet"
@@ -84,7 +84,7 @@
                             </div>
                         </div>
                         <div class="simple-footer">
-                            Copyright &copy; Stisla 2018
+                            Copyright &copy; Toko Beras
                         </div>
                     </div>
                 </div>
