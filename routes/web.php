@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\OngkirController;
 use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\ProdukController;
 
 /*
@@ -33,6 +34,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('shippings', OngkirController::class);
     Route::resource('produks', ProdukController::class);
     Route::resource('pelanggans', PelangganController::class);
+    Route::resource('pembelians', PembelianController::class);
     
 });
 

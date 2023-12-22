@@ -21,13 +21,13 @@
                         <a class="nav-link"
                             href="{{ url('admin/produks') }}">Produk</a>
                     </li>
-                    <li class="{{ Request::is('admin/shippings') ? 'active' : '' }}">
+                    <li class="{{ Request::is('admin/pelanggans') ? 'active' : '' }}">
                         <a class="nav-link"
-                            href="{{ url('admin/shippings') }}">Pelanggan</a>
+                            href="{{ url('admin/pelanggans') }}">Pelanggan</a>
                     </li>
-                    <li class="{{ Request::is('admin/shippings') ? 'active' : '' }}">
+                    <li class="{{ Request::is('admin/pembelians') ? 'active' : '' }}">
                         <a class="nav-link"
-                            href="{{ url('admin/shippings') }}">Pembelian</a>
+                            href="{{ url('admin/pembelians') }}">Pembelian</a>
                     </li>
                 </ul>
             </li>
